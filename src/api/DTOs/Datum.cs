@@ -3,7 +3,7 @@ using System;
 namespace Netsoft.SmallWorld.Api.DTOs
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006")]
-    public record Datum
+    public class Datum
     {
         public int id { get; set; }
         public int ot { get; set; }
