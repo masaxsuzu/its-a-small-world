@@ -30,7 +30,7 @@ namespace Netsoft.SmallWorld.Api.Tests.Helpers
 
         public static T Debug<T>(this T value, bool on = false)
         {
-            if(on)
+            if (on)
             {
                 Console.WriteLine(value.ToString());
             }

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 using Netsoft.SmallWorld.Api.DTOs;
 
@@ -60,7 +60,7 @@ namespace Netsoft.SmallWorld.Api.Contexts
                     _ = x.Property(x => x.str15);
                     _ = x.Property(x => x.str16);
                 });
-                
+
         }
     }
 }

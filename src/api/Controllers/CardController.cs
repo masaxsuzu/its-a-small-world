@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -57,7 +57,7 @@ namespace Netsoft.SmallWorld.Api.Controllers
 
             if (card1 == null || card2 == null)
             {
-                string error = "Monster cards must be provided." ;
+                string error = "Monster cards must be provided.";
                 _logger.LogError(error);
                 return NotFound(error);
             }

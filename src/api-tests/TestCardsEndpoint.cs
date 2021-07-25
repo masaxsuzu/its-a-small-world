@@ -34,10 +34,10 @@ namespace Netsoft.SmallWorld.Api.Tests
         }
 
         [Theory]
-        [InlineData("ƒuƒ‰ƒbƒNEƒ}ƒWƒVƒƒƒ“")]
-        [InlineData("ƒIƒVƒŠƒX‚Ì“V‹ó—³")]
-        [InlineData("ƒIƒxƒŠƒXƒN‚Ì‹_•º")]
-        [InlineData("ƒ‰[‚Ì—ƒ_—³")]
+        [InlineData("ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒã‚¸ã‚·ãƒ£ãƒ³")]
+        [InlineData("ã‚ªã‚·ãƒªã‚¹ã®å¤©ç©ºç«œ")]
+        [InlineData("ã‚ªãƒ™ãƒªã‚¹ã‚¯ã®å·¨ç¥å…µ")]
+        [InlineData("ãƒ©ãƒ¼ã®ç¿¼ç¥ç«œ")]
         public async Task CardsWithSameNamesAreIncluded(string cardName)
         {
             // Arrange

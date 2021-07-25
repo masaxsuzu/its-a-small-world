@@ -1,4 +1,4 @@
-﻿using Netsoft.SmallWorld.Api.Contexts;
+using Netsoft.SmallWorld.Api.Contexts;
 using Netsoft.SmallWorld.Api.DTOs;
 
 using System;

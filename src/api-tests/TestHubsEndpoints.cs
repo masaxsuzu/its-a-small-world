@@ -20,10 +20,10 @@ namespace Netsoft.SmallWorld.Api.Tests
         }
 
         [Theory]
-        [InlineData("ƒuƒ‰ƒbƒNEƒ}ƒWƒVƒƒƒ“","Œõ‚Ì‘n‘¢_ ƒzƒ‹ƒAƒNƒeƒB")]
-        [InlineData("ƒuƒ‰ƒbƒNEƒ}ƒWƒVƒƒƒ“", "ƒuƒ‰ƒbƒNEƒ}ƒWƒVƒƒƒ“EƒK[ƒ‹")]
-        [InlineData("€‚Ì‚S‚Â¯‚Ä‚ñ‚Æ‚¤’", "ƒuƒ‰ƒbƒNEƒ}ƒWƒVƒƒƒ“EƒK[ƒ‹")]
-        public async Task SearchAnyCardsSomeHow(string from, string to)
+        [InlineData("ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒã‚¸ã‚·ãƒ£ãƒ³", "å…‰ã®å‰µé€ ç¥ ãƒ›ãƒ«ã‚¢ã‚¯ãƒ†ã‚£")]
+        [InlineData("ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒã‚¸ã‚·ãƒ£ãƒ³", "ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒã‚¸ã‚·ãƒ£ãƒ³ãƒ»ã‚¬ãƒ¼ãƒ«")]
+        [InlineData("æ­»ã®ï¼”ã¤æ˜Ÿã¦ã‚“ã¨ã†è™«", "ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒã‚¸ã‚·ãƒ£ãƒ³ãƒ»ã‚¬ãƒ¼ãƒ«")]
+        public async Task HubsCanBeFoundSomeHow(string from, string to)
         {
             // Arrange
             var client = _factory.CreateClient();
@@ -60,8 +60,8 @@ namespace Netsoft.SmallWorld.Api.Tests
             }
         }
         [Theory]
-        [InlineData("4‚ª”¼Šp”š‚É‚È‚Á‚Ä‚¢‚é", "€‚Ì4‚Â¯‚Ä‚ñ‚Æ‚¤’", "ƒuƒ‰ƒbƒNEƒ}ƒWƒVƒƒƒ“EƒK[ƒ‹")]
-        [InlineData("’†“_‚ª‚Ê‚¯‚Ä‚¢‚é", "€‚Ì‚S‚Â¯‚Ä‚ñ‚Æ‚¤’", "ƒuƒ‰ƒbƒNƒ}ƒWƒVƒƒƒ“EƒK[ƒ‹")]
+        [InlineData("4ãŒåŠè§’æ•°å­—ã«ãªã£ã¦ã„ã‚‹", "æ­»ã®4ã¤æ˜Ÿã¦ã‚“ã¨ã†è™«", "ãƒ–ãƒ©ãƒƒã‚¯ãƒ»ãƒã‚¸ã‚·ãƒ£ãƒ³ãƒ»ã‚¬ãƒ¼ãƒ«")]
+        [InlineData("ä¸­ç‚¹ãŒã¬ã‘ã¦ã„ã‚‹", "æ­»ã®ï¼”ã¤æ˜Ÿã¦ã‚“ã¨ã†è™«", "ãƒ–ãƒ©ãƒƒã‚¯ãƒã‚¸ã‚·ãƒ£ãƒ³ãƒ»ã‚¬ãƒ¼ãƒ«")]
         public async Task NonExistentCardShouldResultIn404Error(string _, string from, string to)
         {
             // Arrange
