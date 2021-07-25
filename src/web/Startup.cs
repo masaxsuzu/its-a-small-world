@@ -16,7 +16,7 @@ using Microsoft.EntityFrameworkCore;
 
 using Netsoft.SmallWorld.Api.Contexts;
 
-namespace Netsoft.SmallWorld.Api
+namespace Netsoft.SmallWorld.Web
 {
     public class Startup
     {

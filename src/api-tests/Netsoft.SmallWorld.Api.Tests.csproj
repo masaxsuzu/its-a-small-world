@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\api\Netsoft.SmallWorld.Api.csproj" />
+    <ProjectReference Include="..\web\Netsoft.SmallWorld.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

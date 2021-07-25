@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Netsoft.SmallWorld.Api
+namespace Netsoft.SmallWorld.Web
 {
     public class Program
     {
