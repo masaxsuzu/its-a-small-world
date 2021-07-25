@@ -65,16 +65,16 @@ namespace Netsoft.SmallWorld.Api.Controllers
             var ret = FetchMainMonsters(_context)
                 .Where(c =>
                     (
-                        (c.atk == card1.atk && c.def != card1.def && c.level != card1.level && c.race != card1.race && c.attribute != card1.attribute && card1.atk != -2) ||
-                        (c.atk != card1.atk && c.def == card1.def && c.level != card1.level && c.race != card1.race && c.attribute != card1.attribute && card1.def != -2) ||
+                        (c.atk == card1.atk && c.def != card1.def && c.level != card1.level && c.race != card1.race && c.attribute != card1.attribute) ||
+                        (c.atk != card1.atk && c.def == card1.def && c.level != card1.level && c.race != card1.race && c.attribute != card1.attribute) ||
                         (c.atk != card1.atk && c.def != card1.def && c.level == card1.level && c.race != card1.race && c.attribute != card1.attribute) ||
                         (c.atk != card1.atk && c.def != card1.def && c.level != card1.level && c.race == card1.race && c.attribute != card1.attribute) ||
                         (c.atk != card1.atk && c.def != card1.def && c.level != card1.level && c.race != card1.race && c.attribute == card1.attribute)
                     )
                     &&
                     (
-                        (c.atk == card2.atk && c.def != card2.def && c.level != card2.level && c.race != card2.race && c.attribute != card2.attribute && card2.atk != -2) ||
-                        (c.atk != card2.atk && c.def == card2.def && c.level != card2.level && c.race != card2.race && c.attribute != card2.attribute && card2.def != -2) ||
+                        (c.atk == card2.atk && c.def != card2.def && c.level != card2.level && c.race != card2.race && c.attribute != card2.attribute) ||
+                        (c.atk != card2.atk && c.def == card2.def && c.level != card2.level && c.race != card2.race && c.attribute != card2.attribute) ||
                         (c.atk != card2.atk && c.def != card2.def && c.level == card2.level && c.race != card2.race && c.attribute != card2.attribute) ||
                         (c.atk != card2.atk && c.def != card2.def && c.level != card2.level && c.race == card2.race && c.attribute != card2.attribute) ||
                         (c.atk != card2.atk && c.def != card2.def && c.level != card2.level && c.race != card2.race && c.attribute == card2.attribute)
