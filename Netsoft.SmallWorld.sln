@@ -14,9 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netsoft.SmallWorld.Lambda", "src\lambda\Netsoft.SmallWorld.Lambda.csproj", "{9A2237B6-ACD2-4141-BA8C-853AC2A70937}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.SmallWorld.Lambda", "src\lambda\Netsoft.SmallWorld.Lambda.csproj", "{9A2237B6-ACD2-4141-BA8C-853AC2A70937}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netsoft.SmallWorld.Lambda.Tests", "src\lambda-tests\Netsoft.SmallWorld.Lambda.Tests.csproj", "{3A23795B-B107-4827-AE0C-4AD352EAF77C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Netsoft.SmallWorld.Lambda.Tests", "src\lambda-tests\Netsoft.SmallWorld.Lambda.Tests.csproj", "{3A23795B-B107-4827-AE0C-4AD352EAF77C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

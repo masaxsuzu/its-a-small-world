@@ -1,4 +1,4 @@
 # top-most EditorConfig file
 root = true
-[*.cs]
+[*.cs,*.json]
 charset = utf-8

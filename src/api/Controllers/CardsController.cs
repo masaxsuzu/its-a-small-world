@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -12,13 +13,13 @@ namespace Netsoft.SmallWorld.Api.Controllers
 {
     [ApiController]
     [Route("v1")]
-    public class CardController : ControllerBase
+    public class CardsController : ControllerBase
     {
 
-        private readonly ILogger<CardController> _logger;
+        private readonly ILogger<CardsController> _logger;
         private readonly CardContext _context;
 
-        public CardController(ILogger<CardController> logger, CardContext context)
+        public CardsController(ILogger<CardsController> logger, CardContext context)
         {
             _logger = logger;
             _context = context;
@@ -92,6 +93,7 @@ namespace Netsoft.SmallWorld.Api.Controllers
             return context
                 .Datas
                 .Where(d =>
+                    (d.type & 0x01) == 1L &&
                     (d.type & 0x40) == 0L &&        // Not Fusion monsters
                     (d.type & 0x2000) == 0L &&      // Not Synchro monsters
                     (d.type & 0x800000) == 0L &&    // Not Xyz monsters

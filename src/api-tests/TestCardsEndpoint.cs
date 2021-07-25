@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 using System.Linq;
 using System.Threading.Tasks;
-using Netsoft.SmallWorld.Web;
+using Netsoft.SmallWorld.Lambda;
 using Netsoft.SmallWorld.Api.Tests.Helpers;
 using Xunit;
 

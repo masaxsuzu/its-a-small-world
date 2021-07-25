@@ -21,11 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\web\Netsoft.SmallWorld.Web.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Helpers\" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\lambda\Netsoft.SmallWorld.Lambda.csproj" />
+  </ItemGroup>
 </Project>
