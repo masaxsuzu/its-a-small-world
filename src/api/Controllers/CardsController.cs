@@ -27,20 +27,21 @@ namespace Netsoft.SmallWorld.Api.Controllers
 
         [HttpGet]
         [Route("cards")]
-        public ActionResult<IEnumerable<Card>> GetCards()
+        public ActionResult<IEnumerable<CardInfo>> GetCards()
         {
             _logger.LogInformation("GetCards");
 
             var ret = FetchMainMonsters(_context)
                 .ToCards(_context)
                 .OrderBy(c => c.name)
+                .ToCardInto()
                 .ToArray();
             return Ok(ret);
         }
 
         [HttpGet]
         [Route("hubs")]
-        public ActionResult<IEnumerable<Card>> GetHubs([FromQuery] string from, [FromQuery] string to)
+        public ActionResult<IEnumerable<CardInfo>> GetHubs([FromQuery] string from, [FromQuery] string to)
         {
             _logger.LogInformation("GetHubs");
             _logger.LogDebug($"{{\"from\":\"{from}\",\"to\":\"{to}\"}}");
@@ -83,6 +84,7 @@ namespace Netsoft.SmallWorld.Api.Controllers
                 )
                 .ToCards(_context)
                 .OrderBy(c => c.id)
+                .ToCardInto()
                 .ToArray();
 
             return Ok(ret);
