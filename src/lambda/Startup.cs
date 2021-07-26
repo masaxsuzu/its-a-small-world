@@ -51,6 +51,7 @@ namespace Netsoft.SmallWorld.Lambda
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Netsoft.SmallWorld.Api v1"));
             }
 
+            app.UseCors(p => p.AllowAnyOrigin());
             app.UseHttpsRedirection();
 
             app.UseRouting();
