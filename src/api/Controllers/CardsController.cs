@@ -98,6 +98,7 @@ namespace Netsoft.SmallWorld.Api.Controllers
                     (d.type & 0x01) == 1L &&
                     (d.type & 0x40) == 0L &&        // Not Fusion monsters
                     (d.type & 0x2000) == 0L &&      // Not Synchro monsters
+                    (d.type & 0x4000) == 0L &&      // Not Tokens
                     (d.type & 0x800000) == 0L &&    // Not Xyz monsters
                     (d.type & 0x4000000) == 0L);    // Not Link monsters
         }

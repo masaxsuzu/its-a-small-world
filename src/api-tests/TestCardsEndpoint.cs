@@ -53,9 +53,9 @@ namespace Netsoft.SmallWorld.Api.Tests
                 count > 1, $"count is {count}, but it must be more than 1.");
         }
         [Theory]
-        [InlineData("オシリスの天空竜","https://storage.googleapis.com/ygoprodeck.com/pics/10000020.jpg")]
-        [InlineData("オベリスクの巨神兵","https://storage.googleapis.com/ygoprodeck.com/pics/10000000.jpg")]
-        [InlineData("ラーの翼神竜","https://storage.googleapis.com/ygoprodeck.com/pics/10000010.jpg")]
+        [InlineData("オシリスの天空竜", "https://storage.googleapis.com/ygoprodeck.com/pics/10000020.jpg")]
+        [InlineData("オベリスクの巨神兵", "https://storage.googleapis.com/ygoprodeck.com/pics/10000000.jpg")]
+        [InlineData("ラーの翼神竜", "https://storage.googleapis.com/ygoprodeck.com/pics/10000010.jpg")]
         public async Task CardImageUrlIsIncluded(string cardName, string imageurl)
         {
             // Arrange
@@ -70,9 +70,9 @@ namespace Netsoft.SmallWorld.Api.Tests
                 imageurl, card.card_images[0].image_url);
         }
         [Theory]
-        [InlineData("オシリスの天空竜","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000020.jpg")]
-        [InlineData("オベリスクの巨神兵","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000000.jpg")]
-        [InlineData("ラーの翼神竜","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000010.jpg")]
+        [InlineData("オシリスの天空竜", "https://storage.googleapis.com/ygoprodeck.com/pics_small/10000020.jpg")]
+        [InlineData("オベリスクの巨神兵", "https://storage.googleapis.com/ygoprodeck.com/pics_small/10000000.jpg")]
+        [InlineData("ラーの翼神竜", "https://storage.googleapis.com/ygoprodeck.com/pics_small/10000010.jpg")]
         public async Task CardSmallImageUrlIsIncluded(string cardName, string imageurl)
         {
             // Arrange
@@ -87,7 +87,7 @@ namespace Netsoft.SmallWorld.Api.Tests
                 imageurl, card.card_images[0].image_url_small);
         }
         [Theory]
-        [InlineData("魔妖仙獣 独眼群主",10)]
+        [InlineData("魔妖仙獣 独眼群主", 10)]
         public async Task PendulumScalesAreNotIncludedInLevel(string cardName, int level)
         {
             // Arrange
@@ -100,6 +100,22 @@ namespace Netsoft.SmallWorld.Api.Tests
             // Assert
             Assert.Equal(
                 level, card.level);
+        }
+        [Theory]
+        [InlineData("戦華の龍兵トークン")]
+        [InlineData("霊魂鳥トークン")]
+        public async Task TokensAreNotIncluded(string cardName)
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.Get<DTOs.CardInfoList>(_url);
+            var card = response.data.Where(c => c.name == cardName).FirstOrDefault();
+
+            // Assert
+            Assert.Equal(
+                null, card);
         }
     }
 }
