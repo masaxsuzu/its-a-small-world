@@ -85,8 +85,8 @@ namespace Netsoft.SmallWorld.Api.Controllers
                     card_images = new CardImage[] {
                         new CardImage() {
                             id = c.id,
-                            image_url = $"https://storage.googleapis.com/ygoprodeck.com/pics/${c.id}.jpg",
-                            image_url_small = $"https://storage.googleapis.com/ygoprodeck.com/pics/${c.id}.jpg",
+                            image_url = $"https://storage.googleapis.com/ygoprodeck.com/pics/{c.id}.jpg",
+                            image_url_small = $"https://storage.googleapis.com/ygoprodeck.com/pics_small/{c.id}.jpg",
                         }
                     }
                 });

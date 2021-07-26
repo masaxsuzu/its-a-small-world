@@ -52,5 +52,39 @@ namespace Netsoft.SmallWorld.Api.Tests
             Assert.True(
                 count > 1, $"count is {count}, but it must be more than 1.");
         }
+        [Theory]
+        [InlineData("オシリスの天空竜","https://storage.googleapis.com/ygoprodeck.com/pics/10000020.jpg")]
+        [InlineData("オベリスクの巨神兵","https://storage.googleapis.com/ygoprodeck.com/pics/10000000.jpg")]
+        [InlineData("ラーの翼神竜","https://storage.googleapis.com/ygoprodeck.com/pics/10000010.jpg")]
+        public async Task CardImageUrlAreIncluded(string cardName, string imageurl)
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.Get<DTOs.CardInfoList>(_url);
+            var card = response.data.Where(c => c.name == cardName).FirstOrDefault();
+
+            // Assert
+            Assert.Equal(
+                imageurl, card.card_images[0].image_url);
+        }
+        [Theory]
+        [InlineData("オシリスの天空竜","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000020.jpg")]
+        [InlineData("オベリスクの巨神兵","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000000.jpg")]
+        [InlineData("ラーの翼神竜","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000010.jpg")]
+        public async Task CardSmallImageUrlAreIncluded(string cardName, string imageurl)
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.Get<DTOs.CardInfoList>(_url);
+            var card = response.data.Where(c => c.name == cardName).FirstOrDefault();
+
+            // Assert
+            Assert.Equal(
+                imageurl, card.card_images[0].image_url_small);
+        }
     }
 }
