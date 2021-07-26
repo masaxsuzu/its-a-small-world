@@ -3,8 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-
-namespace Netsoft.SmallWorld.Lambda
+using Netsoft.SmallWorld.Lambda;
+namespace lambda
 {
     /// <summary>
     /// The Main function can be used to run the ASP.NET Core application locally using the Kestrel webserver.

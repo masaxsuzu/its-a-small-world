@@ -12,7 +12,7 @@ using Amazon.Lambda.APIGatewayEvents;
 using Newtonsoft.Json;
 
 using Netsoft.SmallWorld.Lambda;
-
+using lambda;
 
 namespace Netsoft.SmallWorld.Lambda.Tests
 {
