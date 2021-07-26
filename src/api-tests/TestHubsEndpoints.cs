@@ -22,8 +22,6 @@ namespace Netsoft.SmallWorld.Api.Tests
 
         [Theory]
         [InlineData("ブラック・マジシャン", "光の創造神 ホルアクティ")]
-        [InlineData("ブラック・マジシャン", "ブラック・マジシャン・ガール")]
-        [InlineData("死の４つ星てんとう虫", "ブラック・マジシャン・ガール")]
         public async Task HubsCanBeFoundSomeHow(string from, string to)
         {
             // Arrange

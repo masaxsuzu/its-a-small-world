@@ -24,7 +24,7 @@ namespace Netsoft.SmallWorld.Api.Controllers
                         atk = d.atk,
                         def = d.def,
                         attribute = d.attribute,
-                        level = d.level,
+                        level = d.level % 64,
                         race = d.race,
                         name = t.name,
                     }

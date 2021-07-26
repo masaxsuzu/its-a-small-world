@@ -56,7 +56,7 @@ namespace Netsoft.SmallWorld.Api.Tests
         [InlineData("オシリスの天空竜","https://storage.googleapis.com/ygoprodeck.com/pics/10000020.jpg")]
         [InlineData("オベリスクの巨神兵","https://storage.googleapis.com/ygoprodeck.com/pics/10000000.jpg")]
         [InlineData("ラーの翼神竜","https://storage.googleapis.com/ygoprodeck.com/pics/10000010.jpg")]
-        public async Task CardImageUrlAreIncluded(string cardName, string imageurl)
+        public async Task CardImageUrlIsIncluded(string cardName, string imageurl)
         {
             // Arrange
             var client = _factory.CreateClient();
@@ -73,7 +73,7 @@ namespace Netsoft.SmallWorld.Api.Tests
         [InlineData("オシリスの天空竜","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000020.jpg")]
         [InlineData("オベリスクの巨神兵","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000000.jpg")]
         [InlineData("ラーの翼神竜","https://storage.googleapis.com/ygoprodeck.com/pics_small/10000010.jpg")]
-        public async Task CardSmallImageUrlAreIncluded(string cardName, string imageurl)
+        public async Task CardSmallImageUrlIsIncluded(string cardName, string imageurl)
         {
             // Arrange
             var client = _factory.CreateClient();
@@ -85,6 +85,21 @@ namespace Netsoft.SmallWorld.Api.Tests
             // Assert
             Assert.Equal(
                 imageurl, card.card_images[0].image_url_small);
+        }
+        [Theory]
+        [InlineData("魔妖仙獣 独眼群主",10)]
+        public async Task PendulumScalesAreNotIncludedInLevel(string cardName, int level)
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.Get<DTOs.CardInfoList>(_url);
+            var card = response.data.Where(c => c.name == cardName).FirstOrDefault();
+
+            // Assert
+            Assert.Equal(
+                level, card.level);
         }
     }
 }
