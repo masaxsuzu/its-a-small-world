@@ -36,12 +36,12 @@ namespace Netsoft.SmallWorld.Api.Controllers
                 .OrderBy(c => c.name)
                 .ToCardInto()
                 .ToArray();
-            return Ok(ret);
+            return Ok(new CardInfoList() { data = ret });
         }
 
         [HttpGet]
         [Route("hubs")]
-        public ActionResult<IEnumerable<CardInfo>> GetHubs([FromQuery] string from, [FromQuery] string to)
+        public ActionResult<CardInfoList> GetHubs([FromQuery] string from, [FromQuery] string to)
         {
             _logger.LogInformation("GetHubs");
             _logger.LogDebug($"{{\"from\":\"{from}\",\"to\":\"{to}\"}}");
@@ -87,7 +87,7 @@ namespace Netsoft.SmallWorld.Api.Controllers
                 .ToCardInto()
                 .ToArray();
 
-            return Ok(ret);
+            return Ok(new CardInfoList() { data = ret });
         }
 
         private IQueryable<Datum> FetchMainMonsters(CardContext context)

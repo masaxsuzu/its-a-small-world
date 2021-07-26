@@ -27,11 +27,11 @@ namespace Netsoft.SmallWorld.Api.Tests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.Get<DTOs.CardInfo[]>(_url);
+            var response = await client.Get<DTOs.CardInfoList>(_url);
 
             // Assert
             Assert.NotEmpty(
-                response);
+                response.data);
         }
 
         [Theory]
@@ -45,8 +45,8 @@ namespace Netsoft.SmallWorld.Api.Tests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.Get<DTOs.CardInfo[]>(_url);
-            var count = response.Where(c => c.name == cardName).Count();
+            var response = await client.Get<DTOs.CardInfoList>(_url);
+            var count = response.data.Where(c => c.name == cardName).Count();
 
             // Assert
             Assert.True(

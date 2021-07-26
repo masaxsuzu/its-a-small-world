@@ -30,17 +30,17 @@ namespace Netsoft.SmallWorld.Api.Tests
             var client = _factory.CreateClient();
 
             // Act
-            var cards = await client.Get<DTOs.CardInfo[]>($"/v1/cards");
-            var response = await client.Get<DTOs.CardInfo[]>($"{_baseUrl}/?from={from}&to={to}");
+            var cards = await client.Get<DTOs.CardInfoList>($"/v1/cards");
+            var response = await client.Get<DTOs.CardInfoList>($"{_baseUrl}/?from={from}&to={to}");
 
-            var src = cards.Where(c => c.name == from).First();
-            var dst = cards.Where(c => c.name == to).First();
+            var src = cards.data.Where(c => c.name == from).First();
+            var dst = cards.data.Where(c => c.name == to).First();
 
             // Assert
             Assert.NotEmpty(
-                response);
+                response.data);
 
-            foreach (var hub in response)
+            foreach (var hub in response.data)
             {
                 Assert.True(
                 (
@@ -69,7 +69,7 @@ namespace Netsoft.SmallWorld.Api.Tests
             var client = _factory.CreateClient();
 
             // Act
-            var cards = await client.Get<DTOs.CardInfo[]>($"/v1/cards");
+            var cards = await client.Get<DTOs.CardInfoList>($"/v1/cards");
             var response = await client.GetAsync($"{_baseUrl}/?from={from}&to={to}");
 
             Assert.Equal(System.Net.HttpStatusCode.NotFound, response.StatusCode);
